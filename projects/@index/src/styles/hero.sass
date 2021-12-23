@@ -1,0 +1,51 @@
+#choose-hero
+  #title
+    text-align: center
+    font-family: 宋体, SimSun
+    font-size: 4rem
+    font-weight: 800
+    // background-color: #223640
+    // width: 80%
+    margin: 1em auto
+    padding: 0.2em 0
+
+.hero-list
+  display: flex
+  gap: 4rem
+  flex-wrap: wrap
+  justify-content: center
+
+  .hero-card
+    display: flex
+    flex-direction: column
+    text-decoration: none
+    color: inherit
+    border: 2px solid #262626
+    border-radius: 0.5rem
+    background: linear-gradient(to bottom right,#292929,#222222)
+    padding: 1rem
+    width: 240px
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1)
+    transition: all 0.2s ease-in-out
+    .hero-avatar
+      text-align: center
+      padding: 1.5rem
+      flex: 1
+      display: flex
+      align-items: center
+      img
+        width: 80%
+        height: auto
+        display: block
+        margin: 0 auto
+    .hero-name
+      padding: 1.5rem
+      .hero-title
+        font-size: 1.5rem
+        font-weight: 800
+        color: #fff
+        margin: 0
+    &:hover
+      border: 2px solid #bda45b
+      box-shadow: rgba(0,0,0,0.7) 0px 1px 8px
+      transform: scale(1.05)

@@ -1,0 +1,37 @@
+{
+  "name": "learn-frontend",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clear && pnpm --filter * run build",
+    "clear": "rimraf dist"
+  },
+  "dependencies": {
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@prettier/plugin-pug": "^1.19.0",
+    "@types/node": "^17.0.2",
+    "@types/uuid": "^8.3.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.5.0",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.4",
+    "typescript-eslint": "^0.0.1-alpha.0"
+  },
+  "keywords": [
+    "learning",
+    "frontend",
+    "vue3",
+    "react"
+  ],
+  "author": "Dragon-Fish <dragon-fish@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dragon-Fish/learn-frontend/issues"
+  },
+  "homepage": "https://github.com/Dragon-Fish/learn-frontend#readme"
+}
