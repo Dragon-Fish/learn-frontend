@@ -14,9 +14,11 @@
   gap: 4rem
   flex-wrap: wrap
   justify-content: center
+  padding: 0 5%
 
   .hero-card
     display: flex
+    position: relative
     flex-direction: column
     text-decoration: none
     color: inherit
@@ -43,9 +45,22 @@
       .hero-title
         font-size: 1.5rem
         font-weight: 800
-        color: #fff
         margin: 0
     &:hover
       border: 2px solid #bda45b
       box-shadow: rgba(0,0,0,0.7) 0px 1px 8px
       transform: scale(1.05)
+    &.in-progress
+      text-decoration: line-through
+      // background: linear-gradient(to bottom right,#2e1616,#200a0a)
+      color: #888
+      cursor: not-allowed
+      &::before
+        content: "In progress..."
+        position: absolute
+        top: 1rem
+        left: 1rem
+        font-size: 1.2rem
+      &:hover
+        border: 2px solid #da362a
+        transform: scale(1)
