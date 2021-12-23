@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import InputAdd from './components/InputAdd'
+import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
 import { Todo } from './types/Todo'
 import Logo from './logo.svg'
@@ -20,15 +20,23 @@ function App({ todos = [] }: { todos: Todo[] }) {
         }}
       >
         <h1>
-          <img
-            src={Logo}
-            alt="logo"
+          <a
+            href="/"
             style={{
-              height: '1em',
-              verticalAlign: 'middle',
+              color: 'inherit',
+              textDecoration: 'none',
             }}
-          />
-          Learn React: ToDo
+          >
+            <img
+              src={Logo}
+              alt="logo"
+              style={{
+                height: '1em',
+                verticalAlign: 'middle',
+              }}
+            />
+            Learn React: ToDo
+          </a>
         </h1>
       </header>
       <main
@@ -38,7 +46,7 @@ function App({ todos = [] }: { todos: Todo[] }) {
         }}
       >
         <article>
-          <InputAdd></InputAdd>
+          <AddTodo></AddTodo>
           <TodoList></TodoList>
         </article>
       </main>

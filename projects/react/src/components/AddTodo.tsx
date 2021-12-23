@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { connect } from 'react-redux'
 
 const InputAdd = ({ dispatch }: any) => {
-  let [editMode, setEditMode] = useState(false)
   let [title, setTitle] = useState('')
   let [content, setContent] = useState('')
   const [error, setError] = useState('')
