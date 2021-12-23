@@ -2,8 +2,9 @@
 #app-container
   header
     h1 
-      img.logo(:src="Logo")
-      | Learn Vue3: ToDo
+      a(href='/')
+        img.logo(:src="Logo")
+        span Learn Vue3: ToDo
 
   main
     add-todo
@@ -45,6 +46,9 @@ header
       height: 1em
       vertical-align: middle
       margin: 0 0.5em 0 0
+    a
+      color: inherit
+      text-decoration: none
 
 main
   flex: 1

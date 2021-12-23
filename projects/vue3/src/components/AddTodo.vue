@@ -53,6 +53,10 @@ function handleAdd() {
       font-size: 1.5rem
       border-radius: 50%
 
+  #content
+    min-height: 6rem
+    resize: vertical
+
   em.error
     color: red
 </style>
