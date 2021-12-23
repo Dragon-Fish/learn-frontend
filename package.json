@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "build": "npm run clear && pnpm --filter * run build",
+    "build": "npm run clear && pnpm --filter \"*\" run build",
     "clear": "rimraf dist"
   },
   "dependencies": {
