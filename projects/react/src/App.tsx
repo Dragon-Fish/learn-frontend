@@ -50,19 +50,12 @@ function App({ todos = [] }: { todos: Todo[] }) {
       >
         <p>
           A simple todo app built with React.js, Redux and Vite.{' '}
-          <a
-            href="https://vue3-todo.wjghj.cn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {' '}
-            See Vue3 ver. →
-          </a>
+          <a href="/"> Back to home →</a>
         </p>
         <p>
           &copy; Copyright (c) {new Date().getFullYear()}{' '}
           <a
-            href="https://github.com/Dragon-Fish/learn-react-todo"
+            href="https://github.com/Dragon-Fish/learn-frontend"
             target="_blank"
             rel="noopener noreferrer"
           >

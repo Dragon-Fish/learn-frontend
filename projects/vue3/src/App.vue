@@ -13,13 +13,13 @@
     p
       | A simple todo app built with Vue.js and Vite.
       |
-      a(href="https://react-todo.wjghj.cn", target="_blank", rel="noopener noreferrer") See React ver. →
+      a(href="/") Back to home →
     p
       | Copyright &copy;
       |
       | {{ new Date().getFullYear() }}
       |
-      a(href="https://github.com/Dragon-Fish/learn-vue-todo", target="_blank", rel="noopener noreferrer") Dragon-Fish
+      a(href="https://github.com/Dragon-Fish/learn-frontend", target="_blank", rel="noopener noreferrer") Dragon-Fish
 
 </template>
 
