@@ -2,6 +2,6 @@
 
 This is my first project using React.
 
-A simple ToDo SPA built with React.js, Redux and Vite. 
+A simple ToDo SPA built with React.js, Redux and Vite.
 
-Visit: <https://react-todo.wjghj.cn>
+Visit: <https://todo.wjghj.cn/react/>

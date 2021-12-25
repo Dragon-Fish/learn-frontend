@@ -4,4 +4,4 @@ This is a project I use to practice using Vue3.
 
 A simple ToDo SPA built with Vue.js 3.x and Vite.
 
-Visit: <https://vue3-todo.wjghj.cn>
+Visit: <https://todo.wjghj.cn/vue3/>
