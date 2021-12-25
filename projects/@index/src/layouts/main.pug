@@ -1,0 +1,33 @@
+include ../components/HeroCard.pug
+
+main
+  article
+    #choose-hero
+      h2#title 选择你的英雄！
+      .hero-list
+        +HeroCard({
+          link: '/angular',
+          img: '/images/angular-logo.svg',
+          name: 'Angular',
+          desc: `The modern web developer's platform`,
+          className: 'in-progress',
+        })
+        +HeroCard({
+          link: '/react/',
+          img: '/images/react-logo.svg',
+          name: 'React.js',
+          desc: 'A JavaScript library for building user interfaces',
+        })
+        +HeroCard({
+          link: '/svelte/',
+          img: '/images/svelte-logo.png',
+          name: 'Svelte',
+          desc: 'Cybernetically enhanced web apps',
+          className: 'in-progress',
+        })
+        +HeroCard({
+          link: '/vue3/',
+          img: '/images/vue-logo.png',
+          name: 'Vue.js 3.0',
+          desc: 'The Progressive JavaScript Framework',
+        })

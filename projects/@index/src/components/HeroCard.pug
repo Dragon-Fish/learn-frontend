@@ -1,0 +1,8 @@
+mixin HeroCard(ctx= {})
+  - const { className, link, img, name, desc } = ctx
+  a.hero-card(href=link, class=className)
+    .hero-avatar
+      img(src=img)
+    .hero-name
+      h3.hero-title= name
+      .hero-desc= desc
