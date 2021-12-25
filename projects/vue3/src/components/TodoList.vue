@@ -30,14 +30,20 @@ import { todoList, clearCompletedTodos } from '../utils/globalState'
 const tab = ref<'all' | 'active' | 'completed'>('all')
 
 const validTodos = computed(() => {
-  switch (tab.value) {
-    case 'active':
-      return todoList.value.filter(({ completedAt }) => !completedAt)
-    case 'completed':
-      return todoList.value.filter(({ completedAt }) => !!completedAt)
-    default:
-      return todoList.value
-  }
+  return [
+    ...(() => {
+      switch (tab.value) {
+        case 'active':
+          return todoList.value.filter((todo) => !todo.completedAt)
+        case 'completed':
+          return todoList.value.filter((todo) => !!todo.completedAt)
+        default:
+          return todoList.value
+      }
+    })(),
+  ].sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+  )
 })
 </script>
 

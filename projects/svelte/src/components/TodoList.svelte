@@ -13,7 +13,7 @@
         case 'active':
           return $TODOS.filter((todo) => !todo.completedAt)
         case 'completed':
-          return $TODOS.filter((todo) => todo.completedAt)
+          return $TODOS.filter((todo) => !!todo.completedAt)
       }
     })(),
   ].sort(
