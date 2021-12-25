@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { Todo } from '../types/Todo'
-import { Icon, IconConfigProvider } from '@ricons/utils'
-import { Check, Trash, Minus, Pen } from '@ricons/fa'
+import { Icon } from '@ricons/utils'
+import { Trash, Pen, CheckCircle, CircleRegular } from '@ricons/fa'
 
 const TodoCard = (payload: { index: number; item: Todo; dispatch: any }) => {
   const { index, item, dispatch } = payload
@@ -13,9 +13,9 @@ const TodoCard = (payload: { index: number; item: Todo; dispatch: any }) => {
         listStyle: 'none',
         width: '100%',
         padding: '1rem',
-        backgroundColor: !!item.completedAt ? '#eee' : '#fff',
+        backgroundColor: '#fff',
         color: '#000',
-        boxShadow: `0 0 0.5rem 0.5rem ${!!item.completedAt ? '#fff' : '#eee'}`,
+        boxShadow: `0 0 0.5rem 0.5rem #eee`,
         borderRadius: '0.5rem',
         display: 'flex',
         gap: '1rem',
@@ -23,6 +23,34 @@ const TodoCard = (payload: { index: number; item: Todo; dispatch: any }) => {
         alignItems: 'center',
       }}
     >
+      <div className="todo-check-area" style={{}}>
+        <a
+          onClick={(e) => {
+            dispatch({
+              type: 'updateTodo',
+              payload: {
+                uuid: item.uuid,
+                completedAt: !!item.completedAt ? '' : new Date().toISOString(),
+              },
+            })
+          }}
+          style={{
+            cursor: 'pointer',
+            color: !!item.completedAt ? '#0066cc' : '#ccc',
+            fontSize: '2rem',
+          }}
+        >
+          {!!item.completedAt ? (
+            <Icon>
+              <CheckCircle></CheckCircle>
+            </Icon>
+          ) : (
+            <Icon>
+              <CircleRegular></CircleRegular>
+            </Icon>
+          )}
+        </a>
+      </div>
       <div
         className="todo-main-area"
         style={{
@@ -35,23 +63,25 @@ const TodoCard = (payload: { index: number; item: Todo; dispatch: any }) => {
             fontWeight: 'bold',
             fontSize: '1.25rem',
             textDecoration: !!item.completedAt ? 'line-through' : 'none',
+            color: !!item.completedAt ? '#aaa' : '#000',
           }}
         >
           {item.title || 'No title'}
-          {!!item.completedAt && (
+          {/* {!!item.completedAt && (
             <>
               {' '}
               <Icon color="green">
                 <Check></Check>
               </Icon>
             </>
-          )}
+          )} */}
         </div>
         <div
           className="todo-content"
           style={{
             textDecoration: !!item.completedAt ? 'line-through' : 'none',
             margin: '1rem 0',
+            color: !!item.completedAt ? '#aaa' : '#000',
           }}
         >
           {item.content}
@@ -106,34 +136,6 @@ const TodoCard = (payload: { index: number; item: Todo; dispatch: any }) => {
             </Icon>
           </a>
         </div>
-      </div>
-      <div className="todo-check-area" style={{}}>
-        <a
-          onClick={(e) => {
-            dispatch({
-              type: 'updateTodo',
-              payload: {
-                uuid: item.uuid,
-                completedAt: !!item.completedAt ? '' : new Date().toISOString(),
-              },
-            })
-          }}
-          style={{
-            cursor: 'pointer',
-            color: !!item.completedAt ? '#666' : 'green',
-            fontSize: '2rem',
-          }}
-        >
-          {!!item.completedAt ? (
-            <Icon>
-              <Minus></Minus>
-            </Icon>
-          ) : (
-            <Icon>
-              <Check></Check>
-            </Icon>
-          )}
-        </a>
       </div>
     </li>
   )
