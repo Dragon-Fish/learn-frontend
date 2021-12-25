@@ -1,65 +1,74 @@
 <script lang="ts">
-  import logo from './assets/svelte.png'
-  import Counter from './lib/Counter.svelte'
+  // styles
+  import './styles/index.sass'
+
+  // assets
+  import Logo from './assets/svelte.png'
+
+  // components
+  import AddTodo from './components/AddTodo.svelte'
+  import TodoList from './components/TodoList.svelte'
 </script>
 
-<main>
-  <img src={logo} alt="Svelte Logo" />
-  <h1>Hello Typescript!</h1>
+<div id="app-container">
+  <header>
+    <h1>
+      <a href="/">
+        <img src={Logo} alt="Svelte logo" class="logo" />
+        Learn Svelte: ToDo</a
+      >
+    </h1>
+  </header>
 
-  <Counter />
+  <main>
+    <article>
+      <AddTodo />
+      <TodoList />
+    </article>
+  </main>
 
-  <p>
-    Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte
-    apps.
-  </p>
+  <footer>
+    <p>
+      A simple todo app built with Svelte and Vite. <a href="/"
+        >Back to home →</a
+      >
+    </p>
+    <p>
+      Copyright &copy; {new Date().getFullYear()}{' '}
+      <a
+        href="https://github.com/Dragon-Fish/learn-frontend"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Dragon-Fish
+      </a>
+    </p>
+  </footer>
+</div>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme">SvelteKit</a> for
-    the officially supported framework, also powered by Vite!
-  </p>
-</main>
+<style lang="sass">
+#app-container
+  display: flex
+  flex-direction: column
+  min-height: 100vh
 
-<style>
-  :root {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
+header, main, footer
+  padding: 0 5%
 
-  main {
-    text-align: center;
-    padding: 1em;
-    margin: 0 auto;
-  }
+header
+  h1
+    .logo
+      height: 1em
+      vertical-align: middle
+      margin: 0 0.5em 0 0
+    a
+      color: inherit
+      text-decoration: none
 
-  img {
-    height: 16rem;
-    width: 16rem;
-  }
+main
+  flex: 1
+  margin-bottom: 4rem
 
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: 100;
-    line-height: 1.1;
-    margin: 2rem auto;
-    max-width: 14rem;
-  }
-
-  p {
-    max-width: 14rem;
-    margin: 1rem auto;
-    line-height: 1.35;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      max-width: none;
-    }
-
-    p {
-      max-width: none;
-    }
-  }
+footer
+  background-color: #eee
 </style>
