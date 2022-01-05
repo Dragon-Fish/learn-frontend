@@ -1,8 +1,7 @@
-mixin HeroCard(ctx= {})
-  - const { className, link, img, name, desc } = ctx
-  a.hero-card(href=link, class=className)
+mixin HeroCard({ link, img, name, desc, invalid })
+  a.hero-card(href=link, class={ invalid })
     .hero-avatar
-      img(src=img)
+      img(src=`/images/${img}`, alt=`${name} logo`)
     .hero-name
       h3.hero-title= name
       .hero-desc= desc

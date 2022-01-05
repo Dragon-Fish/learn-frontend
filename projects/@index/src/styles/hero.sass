@@ -28,7 +28,7 @@
     padding: 1rem
     width: 240px
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1)
-    transition: all 0.2s ease-in-out
+    transition: all 0.24s ease-in-out
     .hero-avatar
       text-align: center
       padding: 1.5rem
@@ -50,10 +50,11 @@
       border: 2px solid #bda45b
       box-shadow: rgba(0,0,0,0.7) 0px 1px 8px
       transform: scale(1.05)
-    &.in-progress
+    &.in-progress,
+    &.invalid
       text-decoration: line-through
       // background: linear-gradient(to bottom right,#2e1616,#200a0a)
-      color: #888
+      color: #666
       cursor: not-allowed
       &::before
         content: "In progress..."
@@ -64,3 +65,5 @@
       &:hover
         border: 2px solid #da362a
         transform: scale(1)
+      img
+        filter: grayscale(1)
